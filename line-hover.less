@@ -1,0 +1,42 @@
+/* DESCRIPTION: Adds a cool line hover animation. I used this for navmenu items. */
+
+.line-hover {
+  overflow: hidden;
+  transition: .2s;
+  &:after {
+    position: absolute;
+    transition: .2s;
+    content: '';
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    height: 3px;
+    background: deeppink;
+  }
+  &:nth-of-type(2):after {
+    left: 0;
+  }
+  &:nth-of-type(3):after {
+    right: 0;
+    left: auto;
+  }
+  &:nth-of-type(4):after {
+    left: 0;
+    bottom: auto;
+    top: -3px;
+    width: 100%;
+  }
+  &:nth-of-type(5):after {
+    height: 120%;
+    left: -10%;
+    transform: skewX(15deg);
+    z-index: -1;
+  }
+  &:hover {
+    cursor: pointer;
+    &:after {
+      width: 100%;
+      left: 0;
+    }
+  }
+}
